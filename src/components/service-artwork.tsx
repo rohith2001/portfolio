@@ -1,0 +1,13 @@
+"use client";
+
+export function ServiceArtwork({ index }: { index: number }) {
+  return <div className={`service-artwork artwork-${index}`} aria-hidden="true">
+    <div className="mock-navigation"><span>{["ORBIT / AI", "SOUND ROOM", "CLEAR LEDGER", "MOVING STORIES", "FIELD NOTES", "EVERYDAY®"][index]}</span><span>Explore &nbsp; About &nbsp; Contact ↗</span></div>
+    {index === 0 && <><div className="ai-art-title">USEFUL<br/>INTELLIGENCE.</div><div className="ai-robot"><i/><i/><span/></div><div className="mock-footnote"><span>More room for human ideas.</span><span>Discover Orbit ↗</span></div></>}
+    {index === 1 && <><div className="music-art-copy">Find your<br/><em>next favourite</em><br/>frequency.</div><div className="music-album"><img src="/media/concert.jpg" alt=""/><span>AFTER HOURS<br/>VOL. 04</span></div><div className="music-player"><span>◀ &nbsp; II &nbsp; ▶</span><i/><span>3:24</span></div></>}
+    {index === 2 && <div className="dashboard"><aside><b>◈</b><span>Overview</span><span>Accounts</span><span>Activity</span><span>Settings</span></aside><div className="dashboard-main"><div className="dashboard-title">Your next chapter.<span>Today ↗</span></div><div className="dashboard-stats"><div><small>Available balance</small><strong>24,680<span>.00</span></strong></div><div><small>This month</small><strong>+18.6<span>%</span></strong></div></div><div className="dashboard-chart">{[30,44,37,59,48,72,61,80,68,93,82,100].map((h,i)=><i key={i} style={{height:`${h}%`}}/>)}</div><div className="dashboard-transactions">{["Creative studio","New project","Monthly subscription"].map((title,i)=><div key={title}><span>{title}</span><span>{["+4,200.00","+2,840.00","−129.00"][i]}</span></div>)}</div></div></div>}
+    {index === 3 && <><div className="film-orbit"/><div className="film-title">A DIFFERENT<br/>POINT OF VIEW.</div><div className="film-collage">{["fashion","meeting","concert"].map(photo=><img key={photo} src={`/media/${photo}.jpg`} alt=""/>)}</div><div className="film-side">STORIES<br/>THAT STAY.</div></>}
+    {index === 4 && <><div className="editorial-copy"><span>Objects. Spaces. Ideas.</span><h3>Small rituals,<br/>fresh perspectives,<br/>every day.</h3><p>A journal for the things<br/>that make life feel considered.</p></div><img className="editorial-photo" src="/media/interior.jpg" alt=""/><div className="editorial-title">Room to grow.</div></>}
+    {index === 5 && <div className="brand-study"><span className="brand-study-back">R</span><span className="brand-study-front">R</span><div>EVERYDAY<br/>IDEAS.<br/>EXTRAORDINARY<br/>POSSIBILITIES.</div><span className="brand-study-caption">A new perspective on the familiar.</span></div>}
+  </div>;
+}
